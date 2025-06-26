@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 250 100% 99%;
+    --foreground: 252 62% 7%;
+
+    --card: 250 50% 98%;
+    --card-foreground: 252 62% 7%;
+
+    --popover: 250 50% 98%;
+    --popover-foreground: 252 62% 7%;
+
+    --primary: 252 72% 26%;
+    --primary-foreground: 250 100% 99%;
+
+    --secondary: 250 30% 94%;
+    --secondary-foreground: 252 62% 15%;
+
+    --muted: 250 30% 94%;
+    --muted-foreground: 252 20% 50%;
+
+    --accent: 252 30% 88%;
+    --accent-foreground: 252 62% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 250 100% 99%;
+
+    --border: 252 20% 88%;
+    --input: 252 20% 88%;
+    --ring: 252 72% 26%;
+
+    --radius: 0.75rem;
+
+    /* Cosmic theme colors - Light mode */
+    --cosmic-50: 252 100% 99%;
+    --cosmic-100: 252 90% 95%;
+    --cosmic-200: 252 85% 90%;
+    --cosmic-300: 252 75% 82%;
+    --cosmic-400: 252 65% 70%;
+    --cosmic-500: 252 55% 58%;
+    --cosmic-600: 252 60% 45%;
+    --cosmic-700: 252 65% 35%;
+    --cosmic-800: 252 70% 25%;
+    --cosmic-900: 252 75% 15%;
+    --cosmic-950: 252 80% 8%;
+
+    /* Mystic purple colors */
+    --mystic-50: 280 100% 98%;
+    --mystic-100: 280 85% 94%;
+    --mystic-200: 280 75% 88%;
+    --mystic-300: 280 65% 78%;
+    --mystic-400: 280 55% 65%;
+    --mystic-500: 280 45% 52%;
+    --mystic-600: 280 50% 40%;
+    --mystic-700: 280 55% 30%;
+    --mystic-800: 280 60% 20%;
+    --mystic-900: 280 65% 12%;
+    --mystic-950: 280 70% 6%;
+
+    /* Gold accent colors */
+    --gold-50: 48 100% 96%;
+    --gold-100: 48 95% 88%;
+    --gold-200: 48 90% 76%;
+    --gold-300: 48 85% 64%;
+    --gold-400: 48 80% 52%;
+    --gold-500: 48 75% 40%;
+    --gold-600: 45 70% 32%;
+    --gold-700: 42 65% 24%;
+    --gold-800: 39 60% 16%;
+    --gold-900: 36 55% 10%;
+    --gold-950: 33 50% 5%;
+  }
+
+  .dark {
+    --background: 252 62% 4%;
+    --foreground: 250 100% 98%;
+
+    --card: 252 50% 6%;
+    --card-foreground: 250 100% 98%;
+
+    --popover: 252 50% 6%;
+    --popover-foreground: 250 100% 98%;
+
+    --primary: 252 85% 70%;
+    --primary-foreground: 252 62% 4%;
+
+    --secondary: 252 25% 12%;
+    --secondary-foreground: 250 100% 98%;
+
+    --muted: 252 25% 12%;
+    --muted-foreground: 252 20% 65%;
+
+    --accent: 252 25% 16%;
+    --accent-foreground: 250 100% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 250 100% 98%;
+
+    --border: 252 25% 16%;
+    --input: 252 25% 16%;
+    --ring: 252 85% 70%;
+
+    /* Cosmic theme colors - Dark mode */
+    --cosmic-50: 252 62% 4%;
+    --cosmic-100: 252 55% 8%;
+    --cosmic-200: 252 50% 12%;
+    --cosmic-300: 252 45% 18%;
+    --cosmic-400: 252 40% 25%;
+    --cosmic-500: 252 35% 35%;
+    --cosmic-600: 252 40% 45%;
+    --cosmic-700: 252 50% 55%;
+    --cosmic-800: 252 60% 65%;
+    --cosmic-900: 252 75% 80%;
+    --cosmic-950: 252 90% 95%;
+
+    /* Mystic purple colors - Dark mode */
+    --mystic-50: 280 62% 4%;
+    --mystic-100: 280 55% 8%;
+    --mystic-200: 280 50% 12%;
+    --mystic-300: 280 45% 18%;
+    --mystic-400: 280 40% 25%;
+    --mystic-500: 280 35% 35%;
+    --mystic-600: 280 40% 45%;
+    --mystic-700: 280 50% 55%;
+    --mystic-800: 280 60% 65%;
+    --mystic-900: 280 75% 80%;
+    --mystic-950: 280 90% 95%;
+
+    /* Gold accent colors - Dark mode */
+    --gold-50: 48 50% 8%;
+    --gold-100: 48 55% 12%;
+    --gold-200: 48 60% 18%;
+    --gold-300: 48 65% 25%;
+    --gold-400: 48 70% 35%;
+    --gold-500: 48 75% 45%;
+    --gold-600: 48 80% 55%;
+    --gold-700: 48 85% 65%;
+    --gold-800: 48 90% 75%;
+    --gold-900: 48 95% 85%;
+    --gold-950: 48 100% 94%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .cosmic-bg {
+    @apply bg-cosmic-gradient;
+  }
+
+  .mystic-bg {
+    @apply bg-mystic-gradient;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-cosmic-600 via-mystic-500 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(
+        135deg,
+        hsl(var(--cosmic-400)),
+        hsl(var(--mystic-400)),
+        hsl(var(--gold-400))
+      )
+      1;
+  }
+}
